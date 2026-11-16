@@ -15,7 +15,7 @@ DOCS=['docs/INSTALL.md','docs/BUILDING.md','docs/THIRD_PARTY_NOTICES.md','docs/P
 def candidates(root=ROOT):
     root=Path(root)
     files={root/name for name in TOP+DOCS}
-    for folder,extensions in [('src',{'.java'}),('res',{'.xml'}),('tests',{'.java','.py'}),('tools',{'.py'})]:
+    for folder,extensions in [('src',{'.java'}),('res',{'.xml'}),('tests',{'.java','.py','.mjs'}),('tools',{'.py'})]:
         files.update(p for p in (root/folder).rglob('*') if p.is_file() and p.suffix in extensions and '__pycache__' not in p.parts)
     files.update(p for p in (root/'.github').rglob('*') if p.is_file())
     files.add(root/'tools/public-assets.json')
@@ -34,7 +34,7 @@ def main():
         if name.startswith(('signing/','build/','output/','Detox_TV_Backup/','assets/wallpapers/','assets/gaming/')) or path.suffix.lower() in {'.jks','.dpapi','.key','.apk','.idsig','.pfx','.p12'}:
             raise ValueError('Private file in public source manifest: '+name)
         data=path.read_bytes()
-        if path.suffix.lower() in {'.java','.py','.md','.txt','.json','.ps1','.xml','.yml','.yaml'}:
+        if path.suffix.lower() in {'.java','.py','.mjs','.md','.txt','.json','.ps1','.xml','.yml','.yaml'}:
             text=data.decode('utf-8-sig')
             if re.search(r'[A-Z]:/+Users/+[^/\s]+/+(?:Documents|Downloads|Desktop)/',text.replace('\\','/'),re.I) or re.search(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',text):
                 raise ValueError('Private laptop detail or key material in publication candidate: '+name)

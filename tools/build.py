@@ -2,6 +2,7 @@
 """Portable Detox APK build. No installer, downloads, automatic keys or private laptop config."""
 import argparse
 import getpass
+import json
 import os
 from pathlib import Path
 import re
@@ -54,6 +55,8 @@ def arguments(argv=None):
     parser.add_argument('--java-home', default=os.environ.get('JAVA_HOME'))
     parser.add_argument('--android-sdk', default=os.environ.get('ANDROID_HOME') or os.environ.get('ANDROID_SDK_ROOT'))
     parser.add_argument('--configuration', choices=['Debug', 'Release'], default='Debug')
+    parser.add_argument('--edition', choices=['public','personal'], default='public', help='Personal is an explicit local-media opt-in; public remains the default')
+    parser.add_argument('--media-profile', type=Path, help='Private personal media profile inside assets; never included in a public build')
     signing = parser.add_mutually_exclusive_group(required=True)
     signing.add_argument('--unsigned', action='store_true', help='Compile only; this APK cannot be installed')
     signing.add_argument('--keystore', type=Path, help='Your own existing signing key; never committed')
@@ -111,7 +114,14 @@ def main(argv=None):
             classes, dex, gen = work / 'classes', work / 'dex', work / 'gen'
             for path in [classes, dex, gen]:
                 path.mkdir()
-            public_assets = stage_public_assets(ROOT, work / 'assets')
+            metadata={'edition':'public'}
+            if args.edition=='personal':
+                from personal_media import prepare
+                metadata=prepare(ROOT,args.media_profile or ROOT/'assets/wallpapers/personal-catalog.json',work/'assets',gen)
+                public_assets=work/'assets'
+            else:
+                if args.media_profile:raise ValueError('A private profile requires --edition personal')
+                public_assets = stage_public_assets(ROOT, work / 'assets')
             application = manifest.getroot().find('application')
             application.set(ANDROID + 'debuggable', str(args.configuration == 'Debug').lower())
             manifest.write(work / 'AndroidManifest.xml', encoding='utf-8', xml_declaration=True)
@@ -126,7 +136,8 @@ def main(argv=None):
             (gen / 'Apps.java').write_text('package com.ansub.tvhome; final class Apps { static final String[] LIST={' + ','.join(packages) + '};}\n', encoding='utf-8')
             run([aapt, 'compile', '--dir', ROOT / 'res', '-o', work / 'resources.zip'])
             run([aapt, 'link', '-o', work / 'base.apk', '-I', android_jar, '-R', work / 'resources.zip', '--auto-add-overlay', '--manifest', work / 'AndroidManifest.xml', '--min-sdk-version', '21', '--target-sdk-version', '34', '-A', public_assets])
-            sources = sorted((ROOT / 'src').rglob('*.java')) + [gen / 'Apps.java']
+            overrides=set(metadata.get('overrides',[]))
+            sources = [p for p in sorted((ROOT / 'src').rglob('*.java')) if p.name not in overrides] + sorted(gen.glob('*.java'))
             java_response(work / 'javac.args', ['-encoding', 'UTF-8', '-source', '8', '-target', '8', '-bootclasspath', str(android_jar) + os.pathsep + str(lambda_jar), '-d', classes, *sources])
             run([javac, '@' + str(work / 'javac.args')])
             dex_args = ['--min-api', '21', '--lib', str(android_jar), '--output', str(dex), '--debug' if args.configuration == 'Debug' else '--release'] + [str(p) for p in sorted(classes.rglob('*.class'))]
@@ -154,6 +165,7 @@ def main(argv=None):
                     output.unlink()
                 raise
             print(f'Built {"UNSIGNED (not installable)" if args.unsigned else "signed"} {args.configuration} APK: {output}')
+            output.with_suffix(output.suffix+'.build.json').write_text(json.dumps(metadata,indent=2)+'\n',encoding='utf-8')
     finally:
         if env is not None:
             env.pop(args.password_environment, None)

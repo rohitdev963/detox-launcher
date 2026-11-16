@@ -76,6 +76,7 @@ classes against small Android stand-ins; they are not emulator or hardware tests
 python tests/verify-gaming-video-runtime.py --java-home "$JAVA_HOME"
 python tests/verify-photo-metadata-runtime.py --java-home "$JAVA_HOME"
 python tests/verify-menu-typography-runtime.py --java-home "$JAVA_HOME"
+python tests/verify-companion-input-runtime.py --java-home "$JAVA_HOME"
 python -m unittest discover -s tests -p test_video_media_policy.py -v
 ```
 
@@ -90,6 +91,27 @@ To regenerate the original backgrounds, install Pillow and FFmpeg, then run
 artwork regeneration only; ordinary builds use the committed samples. Review the
 new files, update `tools/public-assets.json` hashes and run the media checks after
 regeneration. The samples contain original procedural art and no soundtrack.
+
+An optional browser test uses Node.js 22+ and an installed Chromium browser:
+
+```sh
+node tests/verify-companion-browser.mjs
+```
+
+It starts a loopback mock TV and a fresh generated browser profile under `build/`.
+Set `DETOX_TEST_BROWSER` to your Chromium executable; the Windows default is Edge.
+It does not connect to a real TV or use your normal browser profile. This checks
+the web client, not Android's hardware input stack.
+
+## Optional local media edition
+
+Public remains the default. `--edition personal` explicitly opts into a private
+`assets/wallpapers/personal-catalog.json` profile whose files and hashes must match.
+It generates only four media catalogs under `build/`; Home and Gaming activities
+are compiled directly from the current source. A profile is not included here,
+and neither personal media nor signing credentials are needed for a public build.
+Do not publish a personal APK or profile without reviewing its contents and rights.
+Local-profile tests skip when that private profile is absent.
 
 ## Release identity
 

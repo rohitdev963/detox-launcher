@@ -435,6 +435,13 @@ public final class GamingActivity extends Activity {
 
  private boolean motionAllowed(){return prefs.getBoolean("gamingMotion",true)&&AppIconSettingsPolicy.motionMode(prefs.contains("launcherMotionPreset"),prefs.getInt("launcherMotionPreset",0),prefs.getInt("launcherAnimationMode",0))!=2&&(Build.VERSION.SDK_INT<26||android.animation.ValueAnimator.areAnimatorsEnabled());}
 
+ @Override public boolean dispatchKeyEvent(KeyEvent event){
+  if(event.getKeyCode()==KeyEvent.KEYCODE_SETTINGS){
+   if(event.getAction()==KeyEvent.ACTION_DOWN&&event.getRepeatCount()==0)libraryMenu();
+   return true;
+  }
+  return super.dispatchKeyEvent(event);
+ }
  @Override public void onWindowFocusChanged(boolean focus){super.onWindowFocusChanged(focus);if(focus)configureGamingWindow();if(videoBackground!=null)videoBackground.active(focus&&resumed&&themePreview==null);}
 
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ansub.tvhome.rain" android:versionCode="112" android:versionName="1.10.56">
+    package="com.ansub.tvhome.rain" android:versionCode="113" android:versionName="1.10.57">
     <!-- Alarms and timers are confirmed and delivered by an installed system clock app. -->
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />

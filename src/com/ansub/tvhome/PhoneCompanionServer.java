@@ -266,7 +266,8 @@ final class PhoneCompanionServer implements Runnable {
             if (!("up".equals(key) || "down".equals(key) || "left".equals(key) || "right".equals(key)
                     || "ok".equals(key) || "back".equals(key) || "volume-up".equals(key)
                     || "volume-down".equals(key) || "home".equals(key) || "settings".equals(key)
-                    || "play-pause".equals(key) || "mute".equals(key) || "menu".equals(key))) {
+                    || "play-pause".equals(key) || "mute".equals(key) || "menu".equals(key)
+                    || "launcher-settings".equals(key))) {
                 respond(output, 400, "Bad key", "application/json", "{\"error\":\"unsupported key\"}"); return;
             }
             if (!listener.onRemoteKey(key)) {
@@ -295,7 +296,7 @@ final class PhoneCompanionServer implements Runnable {
             }
             respond(output, 200, "OK", "application/json", "{\"ok\":true,\"message\":\"Text copied to the TV clipboard.\"}");
         } else if ("GET".equals(method) && "/api/ping".equals(path)) {
-            respond(output, 200, "OK", "application/json", "{\"ok\":true}");
+            respond(output, 200, "OK", "application/json", "{\"ok\":true,\"scope\":\"detox\",\"launcherReady\":"+CompanionInput.ready()+"}");
         } else if ("POST".equals(method) && "/api/video/start".equals(path)) {
             if (length > MAX_JSON) { respond(output, 413, "Too large", "application/json", "{\"error\":\"request too large\"}"); return; }
             JSONObject body = readJson(input, length);

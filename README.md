@@ -5,15 +5,15 @@ settings, a Gaming library, live backgrounds and native clock faces.
 
 ## Install on your TV
 
-Download the **[signed v1.10.56 APK](https://github.com/rohitdev963/detox-launcher/releases/download/v1.10.56/Detox-1.10.56-release.apk)**
-(2.26 MB) and its [SHA-256 file](https://github.com/rohitdev963/detox-launcher/releases/download/v1.10.56/Detox-1.10.56-release.apk.sha256).
+Download the **[signed v1.10.57 public APK](https://github.com/rohitdev963/detox-launcher/releases/download/v1.10.57/Detox-1.10.57-public-release.apk)**
+(2.27 MB) and its [SHA-256 file](https://github.com/rohitdev963/detox-launcher/releases/download/v1.10.57/Detox-1.10.57-public-release.apk.sha256).
 You do not need to clone or compile the source to use Detox.
 Follow [the installation and update guide](docs/INSTALL.md).
 
-The public edition is **1.10.56 / build 112**, published as a
-[Public Preview](https://github.com/rohitdev963/detox-launcher/releases/tag/v1.10.56).
-Its new sample-background defaults have passed local validation but have not yet
-been tested on a TV.
+The current public edition is **1.10.57 / build 113**, published as a
+[Public Preview](https://github.com/rohitdev963/detox-launcher/releases/tag/v1.10.57).
+It uses the latest launcher code with the original, redistributable sample media.
+Read the [release notes](docs/RELEASE_NOTES.md) for changes and testing limits.
 
 ## Features
 
@@ -38,12 +38,12 @@ Detox; it does not promise arbitrary third-party app control.
 - Video decoding and the ability to choose a default Home app depend on the device.
 - Samsung Tizen and LG webOS are not Android and cannot install this APK directly.
 
-The maintainer reports the installed Detox build works on their TV. This is
-user-reported testing on one device, not a guarantee for every model. The exact
-installed build was not rechecked during open-source preparation. Local validation
-is separate from the public edition's automated validation. The public edition has
-46 host suites; build results and device-only limitations are documented with the
-release. Hardware behavior on other models is unverified.
+The v1.10.57 personal edition was updated in place and launched on two Android TVs.
+TV installation and launch do not establish that every feature works. The exact
+public APK and its sample defaults have not been tested on a TV. Local validation
+includes 47 host suites, Android compilation and targeted runtime/browser tests.
+Complete playback, slideshow and phone navigation checks on hardware remain
+pending; no measured FPS or every-device compatibility guarantee is made.
 
 ## Build from source
 

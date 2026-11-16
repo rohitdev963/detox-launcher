@@ -6,7 +6,6 @@ import android.graphics.RectF;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PixelFormat;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
 // Tiny white outline icons on a 24x24 grid, so the app needs no image resources.
@@ -117,4 +116,22 @@ final class LineIcon extends Drawable {
     @Override public int getOpacity() { return PixelFormat.TRANSLUCENT; }
     @Override public int getIntrinsicWidth() { return 44; }
     @Override public int getIntrinsicHeight() { return 44; }
+    @Override public ConstantState getConstantState() {
+        final int[] savedOps=ops==null?null:ops.clone();
+        final int savedColor=color,savedAlpha=paint.getAlpha();
+        final float savedStroke=strokeScale,savedFill=fillFraction;
+        final boolean savedFit=fitToContent;
+        final RectF reference=fitReference==null?null:new RectF(fitReference);
+        final ColorFilter filter=paint.getColorFilter();
+        return new ConstantState(){
+            @Override public Drawable newDrawable(){
+                LineIcon copy=new LineIcon(savedOps);
+                copy.setColor(savedColor);copy.setAlpha(savedAlpha);copy.setStrokeScale(savedStroke);
+                copy.setFitToContent(savedFit);copy.setFillFraction(savedFill);
+                if(reference!=null)copy.setReferenceBounds(reference.left,reference.top,reference.right,reference.bottom);
+                copy.setColorFilter(filter);return copy;
+            }
+            @Override public int getChangingConfigurations(){return 0;}
+        };
+    }
 }

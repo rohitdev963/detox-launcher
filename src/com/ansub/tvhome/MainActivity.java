@@ -207,12 +207,7 @@ public class MainActivity extends Activity {
     // Wallpapers are saved by name; stable asset paths survive picker reordering.
     private static final String[] WALLPAPER_NAMES = BundledWallpaperCatalog.NAMES;
     private static final int PHOTO = WALLPAPER_NAMES.length - 1;
-    private static final int[][] WALLPAPERS = {
-        {0xFF080F26, 0xFF071420, 0xFF05111E, 0x904BC4D0, 0x805F4AE0},
-        {0xFF141639, 0xFF172239, 0xFF0C192B, 0x90D495B4, 0x807E82E0},
-        {0xFF140E1E, 0xFF17172B, 0xFF091122, 0x90E28A61, 0x805B69D9},
-        {0xFF10202C, 0xFF0B1520, 0xFF060D17, 0x904BC4D0, 0x805F4AE0},
-    };
+    private static final int[][] WALLPAPERS = BundledWallpaperCatalog.PALETTES;
     private float scale = 1f;
     private float textScale = 1.2f;
 
@@ -311,9 +306,10 @@ public class MainActivity extends Activity {
     private boolean pendingCompanionWallpaper;
     private final Runnable fullscreenWallpaperIdle = () -> enterFullscreenWallpaperIdle();
     private final Handler slideshowHandler = new Handler(Looper.getMainLooper());
+    private final WallpaperSlideshowPolicy.Timing slideshowTiming=new WallpaperSlideshowPolicy.Timing();
     private final Runnable slideshowTick = new Runnable() {
         @Override public void run() {
-            if (!activityResumed || !hasWindowFocus()) return;
+            if (!activityResumed || slideshowPreviewBlocked() || hasActiveVideoWallpaper()) {slideshowTiming.reset();return;}
             SharedPreferences prefs = getSharedPreferences(PREFS, 0);
             List<String> photos = getWallpaperSlideshowPhotos();
             if (!prefs.getBoolean("wallpaperSlideshowPhotosEnabled", false) || photos.isEmpty()) return;
@@ -325,6 +321,7 @@ public class MainActivity extends Activity {
             prefs.edit().putInt("wallpaperSlideshowPhotoIndex", next)
                     .putString("photoFile", photos.get(next))
                     .putString("wallpaper", WALLPAPER_NAMES[PHOTO]).apply();
+            slideshowTiming.reset();
             showWallpaper(PHOTO);
             scheduleWallpaperSlideshow();
         }
@@ -878,6 +875,7 @@ public class MainActivity extends Activity {
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         idleHandler.removeCallbacks(fullscreenWallpaperIdle);
         slideshowHandler.removeCallbacks(slideshowTick);
+        slideshowTiming.reset();
         Drawable wallpaper = getWindow().getDecorView().getBackground();
         if (wallpaper != null) wallpaper.setVisible(false, false);
         super.onPause();
@@ -1192,7 +1190,7 @@ if(code==consumedShortcutCaptureKey&&code!=KeyEvent.KEYCODE_UNKNOWN){if(event.ge
             refreshApps();
             scheduleWallpaperSlideshow();
         } else {
-            if(shortcutState!=null)shortcutState.cancel();slideshowHandler.removeCallbacks(slideshowTick);
+            if(shortcutState!=null)shortcutState.cancel();scheduleWallpaperSlideshow();
             idleHandler.removeCallbacks(fullscreenWallpaperIdle);
             if (idleWallpaperMotion != null) idleWallpaperMotion.setActive(false);
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -2056,10 +2054,15 @@ if(code==consumedShortcutCaptureKey&&code!=KeyEvent.KEYCODE_UNKNOWN){if(event.ge
         slideshowHandler.removeCallbacks(slideshowTick);
         SharedPreferences prefs=getSharedPreferences(PREFS,0);
         int seconds=slideshowSeconds();
-        if(activityResumed&&hasWindowFocus()&&seconds>0
-                &&prefs.getBoolean("wallpaperSlideshowPhotosEnabled",false)
-                &&getWallpaperSlideshowPhotos().size()>1)
-            slideshowHandler.postDelayed(slideshowTick,(long)seconds * 1000L);
+        if(WallpaperSlideshowPolicy.shouldSchedule(activityResumed,slideshowPreviewBlocked(),
+                prefs.getBoolean("wallpaperSlideshowPhotosEnabled",false),
+                hasActiveVideoWallpaper(),seconds,getWallpaperSlideshowPhotos().size()))
+            slideshowHandler.postDelayed(slideshowTick,slideshowTiming.delay(SystemClock.uptimeMillis(),seconds));
+        else slideshowTiming.reset();
+    }
+
+    private boolean slideshowPreviewBlocked(){
+        return wallpaperPickerPreviewing||(cropDialog!=null&&cropDialog.isShowing())||isFullscreenWallpaperIdle();
     }
 
     private int slideshowSeconds() {
@@ -2798,8 +2801,17 @@ if(code==consumedShortcutCaptureKey&&code!=KeyEvent.KEYCODE_UNKNOWN){if(event.ge
                 if(photos.isEmpty()){openWallpaperSlideshowPhotoPicker();return;}
                 boolean turnOn=!enabled||saved<=0;
                 SharedPreferences.Editor edit=prefs.edit().putBoolean("wallpaperSlideshowPhotosEnabled",turnOn);
-                if(turnOn&&saved<=0)edit.putInt("wallpaperSlideshowSeconds",300).remove("wallpaperSlideshowMinutes");
-                edit.apply();scheduleWallpaperSlideshow();showWallpaperSlideshowOptions();
+                if(turnOn){
+                    int index=WallpaperSlideshowPolicy.currentIndex(prefs.getInt("wallpaperSlideshowPhotoIndex",0),photos.size());
+                    edit.putInt("wallpaperSlideshowSeconds",WallpaperSlideshowPolicy.activationSeconds(saved))
+                            .remove("wallpaperSlideshowMinutes")
+                            .putInt("wallpaperSlideshowPhotoIndex",index)
+                            .putString("photoFile",photos.get(index)).putString("wallpaper",WALLPAPER_NAMES[PHOTO])
+                            .putBoolean("liveWallpaperEnabled",false);
+                }
+                edit.apply();
+                if(turnOn){configureWallpaperWindow();showWallpaper(PHOTO);}
+                scheduleWallpaperSlideshow();showWallpaperSlideshowOptions();
             } else if ("import".equals(action)) openWallpaperSlideshowPhotoPicker();
             else if ("interval".equals(action)) {
                 String[] labels = {"Off", "Every 30 seconds", "Every minute", "Every 2 minutes", "Every 5 minutes",
@@ -7043,11 +7055,18 @@ if(code==consumedShortcutCaptureKey&&code!=KeyEvent.KEYCODE_UNKNOWN){if(event.ge
         if (isFinishing()) return false;
         if ("home".equals(key)) {
             try {
-                Intent home = new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME)
+                Intent home = new Intent(this,MainActivity.class)
                         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(home);
                 return true;
             } catch (Exception ignored) { return false; }
+        }
+        if ("launcher-settings".equals(key)) {
+            try {
+                if(CompanionInput.ready()&&CompanionInput.key(KeyEvent.KEYCODE_SETTINGS))return true;
+                startActivity(new Intent(this,MainActivity.class).setAction(ACTION_OPEN_DETOX_SETTINGS)
+                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));return true;
+            } catch(Exception ignored){return false;}
         }
         if ("settings".equals(key)) {
             try { openTvSettings(); return true; }

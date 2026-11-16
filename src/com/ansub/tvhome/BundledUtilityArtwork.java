@@ -16,7 +16,10 @@ final class BundledUtilityArtwork {
  private static final Map<String,Bitmap> CACHE=new HashMap<>();
  private static final class Artwork extends BitmapDrawable {
   final boolean preserveColors;
-  Artwork(Context context,Bitmap bitmap,boolean preserveColors){super(context.getResources(),bitmap);this.preserveColors=preserveColors;setFilterBitmap(true);}
+  Artwork(Context context,Bitmap bitmap,boolean preserveColors){
+   super(context.getResources(),bitmap);this.preserveColors=preserveColors;
+   setFilterBitmap(true);setDither(true);setAntiAlias(true);
+  }
  }
  static Drawable home(Context context,String control){return load(context,UtilityArtworkCatalog.home(control));}
  static boolean bundled(Drawable drawable){return drawable instanceof Artwork;}
@@ -34,6 +37,9 @@ final class BundledUtilityArtwork {
     BitmapFactory.Options options=new BitmapFactory.Options();options.inScaled=false;options.inPreferredConfig=Bitmap.Config.ARGB_8888;
     bitmap=BitmapFactory.decodeStream(input,null,options);
     if(bitmap==null||bitmap.getWidth()!=256||bitmap.getHeight()!=256){if(bitmap!=null)bitmap.recycle();return null;}
+    // TV utilities shrink a 256 px original to 30–80 physical pixels. GPU mipmaps
+    // filter that large reduction instead of sampling only four source pixels.
+    bitmap.setHasMipMap(true);
     CACHE.put(stem,bitmap);
    }catch(Exception ignored){return null;}
   }
