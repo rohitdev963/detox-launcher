@@ -41,6 +41,7 @@ __pycache__/
 /COMPANION_REMOVAL_*.md
 /DEEP_AUDIT_*.md
 /DETOX_*.md
+/DETOX_*.json
 /TV_INSTALL*.md
 /FEATURE_STATUS.md
 /MERGE_REPORT.md
@@ -59,6 +60,8 @@ __pycache__/
 /validate_source.sh
 /build-validation.ps1
 /docs/superpowers/
+/tests/verify-clock-rendering.ps1
+/tests/render-support/README.md
 
 .DS_Store
 Thumbs.db

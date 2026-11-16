@@ -10,3 +10,7 @@
 *.webp -text
 *.mp4 -text
 *.ttf -text
+
+# Asset checksums are byte-exact, including text notices/provenance.
+assets/** -text -eol
+LICENSE text eol=lf
