@@ -1,6 +1,7 @@
 # Public release checklist
 
-Planned repository: **rohitdev963/detox-launcher**, approved by the maintainer.
+Published repository: **[rohitdev963/detox-launcher](https://github.com/rohitdev963/detox-launcher)**,
+approved by the maintainer and published on 2026-11-16.
 Original source, documentation and original sample media use the **MIT license**.
 Third-party icon/font licenses and notices are preserved.
 
@@ -34,8 +35,19 @@ Third-party icon/font licenses and notices are preserved.
 
 The old 1.10.55 personal APK is preserved locally and must not be uploaded as the
 public edition: it contains undocumented media. No private complete-laptop ZIP or
-signing directory may be attached. No GitHub push, release upload or TV install has
-occurred during preparation.
+signing directory may be attached.
+
+## Publication completed
+
+- Source published under MIT with third-party notices preserved.
+- [v1.10.56 Public Preview](https://github.com/rohitdev963/detox-launcher/releases/tag/v1.10.56)
+  is public and marked as a pre-release.
+- Six attachments: signed APK, SHA-256, INSTALL.md, LICENSE, NOTICE.md and
+  THIRD_PARTY_NOTICES.md. All six were downloaded without authentication and
+  matched their local SHA-256 hashes.
+- Private vulnerability reporting is enabled and verified.
+- Release source tag points to commit `7d5c83cc793d4b0cc2e0d8cdeace511d75bf2982`.
+- No TV installation or other device operation occurred.
 
 ## Device-testing record
 
@@ -50,4 +62,4 @@ Other models, manufacturer Home restrictions and decoders remain device-dependen
 the runtime harnesses pass. Signed PowerShell and unsigned portable Windows
 builds pass, and both package exactly 41 reviewed assets with no personal media
 or music. Both original clips fully decode at 1080p60. The signed public APK is
-2,256,837 bytes. Device tests and publication remain pending.
+2,256,837 bytes. Public-edition device testing remains pending.

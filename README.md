@@ -5,12 +5,15 @@ settings, a Gaming library, live backgrounds and native clock faces.
 
 ## Install on your TV
 
-Download the **signed release APK** and its SHA-256 file from this repository's
-Releases page. You do not need to clone or compile the source to use Detox.
+Download the **[signed v1.10.56 APK](https://github.com/rohitdev963/detox-launcher/releases/download/v1.10.56/Detox-1.10.56-release.apk)**
+(2.26 MB) and its [SHA-256 file](https://github.com/rohitdev963/detox-launcher/releases/download/v1.10.56/Detox-1.10.56-release.apk.sha256).
+You do not need to clone or compile the source to use Detox.
 Follow [the installation and update guide](docs/INSTALL.md).
 
-The public edition is **1.10.56 / build 112**. Public distribution is still
-being prepared; a download is available only after a release is actually published.
+The public edition is **1.10.56 / build 112**, published as a
+[Public Preview](https://github.com/rohitdev963/detox-launcher/releases/tag/v1.10.56).
+Its new sample-background defaults have passed local validation but have not yet
+been tested on a TV.
 
 ## Features
 
