@@ -1,0 +1,182 @@
+{
+  "repository": "https://github.com/realvjy/3dicons",
+  "revision": "8884d59e68a7bae0e0e2163af5b6c2ad992c01c8",
+  "style": "color",
+  "angle": "dynamic",
+  "assets": [
+    {
+      "stem": "tool",
+      "upstream_filename": "tool-dynamic-color.png",
+      "source_url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/color/tool-dynamic-color.png",
+      "metadata_path": "content/3dicons-meta/tool.md",
+      "source_sha256": "5af70d721a809dbd8f1e69ad54fbee9a6c9af59cd9c98a3638718f640529a02b",
+      "asset": "assets/ui/3dicons/tool-dynamic-color.webp",
+      "sha256": "d62afab255b97344c492631f986b49b776a8fa2bb333bdf4c126c5bc58216534",
+      "bytes": 27872,
+      "source_dimensions": [
+        400,
+        400
+      ],
+      "source_alpha_bounds": [
+        32,
+        26,
+        375,
+        371
+      ],
+      "output_dimensions": [
+        256,
+        256
+      ],
+      "art_dimensions": [
+        223,
+        224
+      ],
+      "optimization": "trim alpha-only margins; preserve aspect; fit within 224x224; center on 256x256 transparent canvas; lossless WebP"
+    },
+    {
+      "stem": "headphone",
+      "upstream_filename": "headphone-dynamic-color.png",
+      "source_url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/color/headphone-dynamic-color.png",
+      "metadata_path": "content/3dicons-meta/headphone.md",
+      "source_sha256": "909a84dbdfb8e370e135580b3b38cb5cbb3a37a616a71adb0ceddcfeae2a5b48",
+      "asset": "assets/ui/3dicons/headphone-dynamic-color.webp",
+      "sha256": "e7a6bdde573edd7e79a2cc3ebb05ebfd252d2ed263100baf54108e0eb0606b22",
+      "bytes": 29558,
+      "source_dimensions": [
+        400,
+        400
+      ],
+      "source_alpha_bounds": [
+        60,
+        46,
+        348,
+        360
+      ],
+      "output_dimensions": [
+        256,
+        256
+      ],
+      "art_dimensions": [
+        205,
+        224
+      ],
+      "optimization": "trim alpha-only margins; preserve aspect; fit within 224x224; center on 256x256 transparent canvas; lossless WebP"
+    },
+    {
+      "stem": "picture",
+      "upstream_filename": "picture-dynamic-color.png",
+      "source_url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/color/picture-dynamic-color.png",
+      "metadata_path": "content/3dicons-meta/picture.md",
+      "source_sha256": "106454ca2b7c0f9a48c8c834fdcc87a88036ab4145ccf6342a7bece09816141f",
+      "asset": "assets/ui/3dicons/picture-dynamic-color.webp",
+      "sha256": "484fa4bc802a5cb085c178ad9c57128737460c85834539476754cfdf17ac4d86",
+      "bytes": 34246,
+      "source_dimensions": [
+        400,
+        400
+      ],
+      "source_alpha_bounds": [
+        32,
+        27,
+        374,
+        372
+      ],
+      "output_dimensions": [
+        256,
+        256
+      ],
+      "art_dimensions": [
+        222,
+        224
+      ],
+      "optimization": "trim alpha-only margins; preserve aspect; fit within 224x224; center on 256x256 transparent canvas; lossless WebP"
+    },
+    {
+      "stem": "setting",
+      "upstream_filename": "setting-dynamic-color.png",
+      "source_url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/color/setting-dynamic-color.png",
+      "metadata_path": "content/3dicons-meta/setting.md",
+      "source_sha256": "6e9fde749dc890086bac1aabaefaf8a4bc1622fd613253f07d6d75298944ee62",
+      "asset": "assets/ui/3dicons/setting-dynamic-color.webp",
+      "sha256": "1e99e53c6b58670e8cf11b7cf1035e293e2c470f93b975052a924f8e6344764b",
+      "bytes": 30742,
+      "source_dimensions": [
+        400,
+        400
+      ],
+      "source_alpha_bounds": [
+        22,
+        30,
+        370,
+        370
+      ],
+      "output_dimensions": [
+        256,
+        256
+      ],
+      "art_dimensions": [
+        224,
+        219
+      ],
+      "optimization": "trim alpha-only margins; preserve aspect; fit within 224x224; center on 256x256 transparent canvas; lossless WebP"
+    },
+    {
+      "stem": "plus",
+      "upstream_filename": "plus-dynamic-color.png",
+      "source_url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/color/plus-dynamic-color.png",
+      "metadata_path": "content/3dicons-meta/plus.md",
+      "source_sha256": "8a92808cc89a3f748ab0ec32794449d8bb813e3b1f6423c724fd6d237c9169bf",
+      "asset": "assets/ui/3dicons/plus-dynamic-color.webp",
+      "sha256": "7a86180adb6f62abfba33037cdbcef4d49369667cc9d33144634a51f9639e270",
+      "bytes": 20028,
+      "source_dimensions": [
+        400,
+        400
+      ],
+      "source_alpha_bounds": [
+        51,
+        54,
+        339,
+        351
+      ],
+      "output_dimensions": [
+        256,
+        256
+      ],
+      "art_dimensions": [
+        217,
+        224
+      ],
+      "optimization": "trim alpha-only margins; preserve aspect; fit within 224x224; center on 256x256 transparent canvas; lossless WebP"
+    },
+    {
+      "stem": "color-palette",
+      "upstream_filename": "color-palette-dynamic-color.png",
+      "source_url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/color/color-palette-dynamic-color.png",
+      "metadata_path": "content/3dicons-meta/color-palette.md",
+      "source_sha256": "1ee76da68c898b5590585807da5d8a0369ed5ebb3188127141a3957e367e4506",
+      "asset": "assets/ui/3dicons/color-palette-dynamic-color.webp",
+      "sha256": "f87d02e1bea10700b12145dd7a211effc3c2872612ecac2c8f7f54a9abfcd8fb",
+      "bytes": 31018,
+      "source_dimensions": [
+        400,
+        400
+      ],
+      "source_alpha_bounds": [
+        25,
+        75,
+        369,
+        318
+      ],
+      "output_dimensions": [
+        256,
+        256
+      ],
+      "art_dimensions": [
+        224,
+        158
+      ],
+      "optimization": "trim alpha-only margins; preserve aspect; fit within 224x224; center on 256x256 transparent canvas; lossless WebP"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ansub.tvhome.rain" android:versionCode="112" android:versionName="1.10.56">
+    <!-- Alarms and timers are confirmed and delivered by an installed system clock app. -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
+    <!-- Only for the network tile: Wi-Fi, Ethernet or offline, and the Wi-Fi signal. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- Optional PIN-paired phone companion, bound to the TV's active local-network address. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Android 11+ only shows apps a home screen asks to see: TV apps and normal apps. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent><action android:name="org.adw.launcher.THEMES" /></intent>
+        <intent><action android:name="com.novalauncher.THEME" /></intent>
+        <intent><action android:name="com.anddoes.launcher.THEME" /></intent>
+        <intent><action android:name="android.speech.action.RECOGNIZE_SPEECH" /></intent>
+        <!-- Settings screens the network tile and the Bluetooth, Sound and Picture shortcuts open. -->
+        <intent><action android:name="android.settings.WIFI_SETTINGS" /></intent>
+        <intent><action android:name="android.settings.BLUETOOTH_SETTINGS" /></intent>
+        <intent><action android:name="com.google.android.intent.action.CONNECT_INPUT" /></intent>
+        <intent><action android:name="android.settings.SOUND_SETTINGS" /></intent>
+        <intent><action android:name="android.settings.DISPLAY_SETTINGS" /></intent>
+        <package android:name="com.tcl.settings" />
+        <!-- Google TV's HDMI input player, so HDMI tiles can see when the TV sends HDMI to it. -->
+        <package android:name="com.google.android.tv.inputplayer" />
+        <!-- These installed apps are listed explicitly so Android 11 package visibility never hides their icons. -->
+        <package android:name="com.google.android.youtube.tv" />
+        <package android:name="org.smarttube.beta" />
+        <package android:name="in.startv.hotstar" />
+        <package android:name="com.crunchyroll.crunchyroid" />
+        <package android:name="app.netmirror.newtv" />
+        <package android:name="com.community.mbox.tv" />
+        <package android:name="org.courville.nova" />
+        <package android:name="com.yablio.sendfilestotv" />
+        <package android:name="com.tcl.gallery" />
+        <package android:name="com.tcl.MultiScreenInteraction_TV" />
+        <package android:name="com.tcl.dashboard" />
+        <package android:name="com.google.android.videos" />
+        <package android:name="com.swordfish.lemuroid" />
+    </queries>
+    <!-- Lets "Uninstall" in the app menu open Android's uninstall prompt. -->
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <application android:name="com.ansub.tvhome.DetoxApplication" android:label="TV Detox Home" android:allowBackup="false" android:hardwareAccelerated="true"
+        android:theme="@android:style/Theme.Material.NoActionBar.Fullscreen">
+        <activity android:name="com.ansub.tvhome.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask" android:stateNotNeeded="true"
+            android:clearTaskOnLaunch="true" android:excludeFromRecents="true"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout|uiMode|locale">
+            <intent-filter android:priority="3">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.ansub.tvhome.LauncherAccessibilityService"
+            android:label="TV Detox Home Redirect"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice"
+                android:resource="@xml/detox_accessibility_service" />
+        </service>
+        <service android:name="com.ansub.tvhome.DetoxLiveWallpaperService"
+            android:label="TV Detox Motion Wallpapers"
+            android:permission="android.permission.BIND_WALLPAPER"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper"
+                android:resource="@xml/detox_live_wallpaper" />
+        </service>
+        <service android:name="com.ansub.tvhome.DetoxMediaAccess" android:label="Detox media controls" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:exported="true"><intent-filter><action android:name="android.service.notification.NotificationListenerService" /></intent-filter></service>
+        <activity android:name="com.ansub.tvhome.GamingActivity" android:exported="false" android:screenOrientation="landscape" android:hardwareAccelerated="true" />
+    </application>
+</manifest>
+
+
+
+
+
+

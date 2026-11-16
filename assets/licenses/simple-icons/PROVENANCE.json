@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/simple-icons/simple-icons",
+  "revision": "c37b20d397a710fdd402aae3cb643b820b142074",
+  "license": "CC0-1.0",
+  "renderer": "resvg-py 0.5.0 (build only, not an app dependency)",
+  "assets": [
+    {
+      "stem": "simple-google-play",
+      "upstream_filename": "icons/googleplay.svg",
+      "source_url": "https://github.com/simple-icons/simple-icons/blob/c37b20d397a710fdd402aae3cb643b820b142074/icons/googleplay.svg",
+      "source_sha256": "81818efe46f3d59d5d320063df77746016dc2c4a64b94be5abcf26824f74c6e7",
+      "asset": "assets/ui/utility-simpleicons/google-play.webp",
+      "sha256": "605d9150f89e3d272c77925054f7de211a0e7627719cd0a10555df7f3f854363",
+      "bytes": 3818,
+      "dimensions": [
+        256,
+        256
+      ],
+      "tintable": true,
+      "transformation": "SVG rasterized at 400px; monochrome symbols white for existing runtime accent tint; alpha-zero margin trimmed; aspect fit 224px centered on transparent 256px canvas; exact lossless WebP."
+    }
+  ]
+}

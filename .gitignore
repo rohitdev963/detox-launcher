@@ -1,0 +1,66 @@
+# Private signing identity and credentials: never publish, even in a private repo.
+/signing/
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.dpapi
+*.key
+.env
+.env.*
+!.env.example
+local.properties
+
+# Generated outputs, installed-app copies and local recovery material.
+/build/
+/out/
+/output/
+/Detox_TV_Backup/
+/reports/
+/android-validation/
+# Supplied entertainment media has no documented redistribution terms.
+# Keep it local until a separate, validated public asset set is implemented.
+/assets/wallpapers/
+/assets/gaming/videos/
+/assets/gaming/music/
+/docs/MEDIA_RIGHTS.csv
+*.apk
+*.aab
+*.idsig
+*.class
+*.dex
+*.log
+__pycache__/
+*.pyc
+
+# Laptop-specific notes, historical reports and local signing/installation helpers.
+/README_LAPTOP_UPDATE.md
+/MEDIA_INVENTORY.txt
+/BUILD_*.md
+/CODE_DATA_AUDIT_*.md
+/COMPANION_REMOVAL_*.md
+/DEEP_AUDIT_*.md
+/DETOX_*.md
+/TV_INSTALL*.md
+/FEATURE_STATUS.md
+/MERGE_REPORT.md
+/INTEGRATION_READINESS.md
+/VIDEO_ASSET_CATALOG_AUDIT.md
+/CHANGELOG.md
+/CLOCK_*.md
+/FANTASY_*.md
+/GAMING_*.md
+/HOME_*.md
+/build-release-local.ps1
+/install-tv.ps1
+/install_tv.sh
+/build_laptop.sh
+/build.sh
+/validate_source.sh
+/build-validation.ps1
+/docs/superpowers/
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

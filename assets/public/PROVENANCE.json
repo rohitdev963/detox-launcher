@@ -1,0 +1,54 @@
+{
+  "license": "MIT",
+  "author": "Rohit and Detox contributors",
+  "source": "tools/generate_public_media.py",
+  "external_media_inputs": [],
+  "assets": [
+    {
+      "path": "public/wallpapers/aurora-veil.jpg",
+      "kind": "image",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "1e192fac2dd3fdaed31f755fce20aa50bc6acceebac857bcc3856826409f54c9",
+      "bytes": 48856
+    },
+    {
+      "path": "public/wallpapers/twilight-peaks.jpg",
+      "kind": "image",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "3742333d14f87b60ac7f36d11f212fd7475bbcc82207af34272dc09a4bba2ab6",
+      "bytes": 61108
+    },
+    {
+      "path": "public/wallpapers/ember-horizon.jpg",
+      "kind": "image",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "fa19e9ec68dd7e8d5b82b33edaad6f97c894519b44c7a7c3fb106d0a74e3dc02",
+      "bytes": 61183
+    },
+    {
+      "path": "public/videos/aurora-drift.mp4",
+      "kind": "video",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60,
+      "duration_seconds": 8,
+      "audio": false,
+      "sha256": "28c4f41eb34a1da004afb47c3f2b453192efca63748e85acf8b5fbcb43543fe6",
+      "bytes": 149250
+    },
+    {
+      "path": "public/videos/ember-drift.mp4",
+      "kind": "video",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60,
+      "duration_seconds": 8,
+      "audio": false,
+      "sha256": "045ab3a8403dde76230dd36f65650cf713b00e1d8e1b1a797cd70a52848db2c4",
+      "bytes": 199678
+    }
+  ]
+}

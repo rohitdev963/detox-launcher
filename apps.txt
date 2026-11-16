@@ -1,0 +1,15 @@
+# Apps shown on the Detox home screen, in order. One package name per line.
+# Apps that aren't installed are skipped. The list wraps across two rows of six.
+com.google.android.youtube.tv
+org.smarttube.beta
+in.startv.hotstar
+com.crunchyroll.crunchyroid
+app.netmirror.newtv
+com.community.mbox.tv
+org.courville.nova
+com.yablio.sendfilestotv
+com.tcl.gallery
+com.tcl.MultiScreenInteraction_TV
+com.tcl.dashboard
+com.google.android.videos
+com.swordfish.lemuroid

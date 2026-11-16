@@ -1,0 +1,98 @@
+{
+  "repository": "https://github.com/microsoft/fluentui-system-icons",
+  "revision": "67e6dec1ee956af3ab4c746a2b3bb6a2e5520a44",
+  "license": "MIT",
+  "renderer": "resvg-py 0.5.0 (build only, not an app dependency)",
+  "assets": [
+    {
+      "stem": "fluent-bluetooth",
+      "upstream_filename": "assets/Bluetooth/SVG/ic_fluent_bluetooth_24_filled.svg",
+      "source_url": "https://github.com/microsoft/fluentui-system-icons/blob/67e6dec1ee956af3ab4c746a2b3bb6a2e5520a44/assets/Bluetooth/SVG/ic_fluent_bluetooth_24_filled.svg",
+      "source_sha256": "870c08cbf23aedf1326798713626e877c456b7b32eb7f25ffe520cb2ec4701c0",
+      "asset": "assets/ui/utility-fluent/bluetooth.webp",
+      "sha256": "1a628cef28ba5afd4ecb8b6c0c55915e3a792cfe00e938c77f5e621b0cffc296",
+      "bytes": 2454,
+      "dimensions": [
+        256,
+        256
+      ],
+      "tintable": true,
+      "transformation": "SVG rasterized at 400px; monochrome symbols white for existing runtime accent tint; alpha-zero margin trimmed; aspect fit 224px centered on transparent 256px canvas; exact lossless WebP."
+    },
+    {
+      "stem": "fluent-apps",
+      "upstream_filename": "assets/Apps/SVG/ic_fluent_apps_48_color.svg",
+      "source_url": "https://github.com/microsoft/fluentui-system-icons/blob/67e6dec1ee956af3ab4c746a2b3bb6a2e5520a44/assets/Apps/SVG/ic_fluent_apps_48_color.svg",
+      "source_sha256": "9623340edb7bb9015c48faad341242c27bd31048d293e9f25a44049ff12f9dbe",
+      "asset": "assets/ui/utility-fluent/apps.webp",
+      "sha256": "d4969146b0479b15982ac552b6ca8b7db611dd971b5938d08f2a167812e7e8df",
+      "bytes": 13686,
+      "dimensions": [
+        256,
+        256
+      ],
+      "tintable": false,
+      "transformation": "SVG rasterized at 400px; monochrome symbols white for existing runtime accent tint; alpha-zero margin trimmed; aspect fit 224px centered on transparent 256px canvas; exact lossless WebP."
+    },
+    {
+      "stem": "fluent-home",
+      "upstream_filename": "assets/Home/SVG/ic_fluent_home_48_color.svg",
+      "source_url": "https://github.com/microsoft/fluentui-system-icons/blob/67e6dec1ee956af3ab4c746a2b3bb6a2e5520a44/assets/Home/SVG/ic_fluent_home_48_color.svg",
+      "source_sha256": "ae35ac77254a1a198a88787b71de1101e849ed504a6e8210a14e9f7ad5a4ed59",
+      "asset": "assets/ui/utility-fluent/home.webp",
+      "sha256": "ce0392e086977422fca1babca006415c94c1c9ef017e2a42507f25f5fb78d645",
+      "bytes": 11778,
+      "dimensions": [
+        256,
+        256
+      ],
+      "tintable": false,
+      "transformation": "SVG rasterized at 400px; monochrome symbols white for existing runtime accent tint; alpha-zero margin trimmed; aspect fit 224px centered on transparent 256px canvas; exact lossless WebP."
+    },
+    {
+      "stem": "fluent-restart",
+      "upstream_filename": "assets/Arrow Clockwise/SVG/ic_fluent_arrow_clockwise_24_filled.svg",
+      "source_url": "https://github.com/microsoft/fluentui-system-icons/blob/67e6dec1ee956af3ab4c746a2b3bb6a2e5520a44/assets/Arrow Clockwise/SVG/ic_fluent_arrow_clockwise_24_filled.svg",
+      "source_sha256": "ecad535bd4fb508ec361094c34b1405ff634e29846778244adf0659ef4de682c",
+      "asset": "assets/ui/utility-fluent/restart.webp",
+      "sha256": "04193ea4299769d401a8cec284bdef728a3bb1cfb6d8cf11a8076b4ea903edb6",
+      "bytes": 4530,
+      "dimensions": [
+        256,
+        256
+      ],
+      "tintable": true,
+      "transformation": "SVG rasterized at 400px; monochrome symbols white for existing runtime accent tint; alpha-zero margin trimmed; aspect fit 224px centered on transparent 256px canvas; exact lossless WebP."
+    },
+    {
+      "stem": "fluent-power",
+      "upstream_filename": "assets/Power/SVG/ic_fluent_power_24_filled.svg",
+      "source_url": "https://github.com/microsoft/fluentui-system-icons/blob/67e6dec1ee956af3ab4c746a2b3bb6a2e5520a44/assets/Power/SVG/ic_fluent_power_24_filled.svg",
+      "source_sha256": "73d92b9bdb36b42c4e9f5e4df44a546086a8aeab238e7033c9bc7e88dc1503cf",
+      "asset": "assets/ui/utility-fluent/power.webp",
+      "sha256": "d46dd9b03f783abf6344296fc5ecc413c0c6a46311b0afc322e1df1a69aef8b3",
+      "bytes": 4594,
+      "dimensions": [
+        256,
+        256
+      ],
+      "tintable": true,
+      "transformation": "SVG rasterized at 400px; monochrome symbols white for existing runtime accent tint; alpha-zero margin trimmed; aspect fit 224px centered on transparent 256px canvas; exact lossless WebP."
+    },
+    {
+      "stem": "fluent-more",
+      "upstream_filename": "assets/More Horizontal/SVG/ic_fluent_more_horizontal_24_filled.svg",
+      "source_url": "https://github.com/microsoft/fluentui-system-icons/blob/67e6dec1ee956af3ab4c746a2b3bb6a2e5520a44/assets/More Horizontal/SVG/ic_fluent_more_horizontal_24_filled.svg",
+      "source_sha256": "511b3360106ecf63b63ed6b2a06ca52295aa49f21ebaf79aafa7cfde22488325",
+      "asset": "assets/ui/utility-fluent/more.webp",
+      "sha256": "13b258c5358954dd10f3abab8b0ffa79d3c9b6150216ada6cb5fdf42e5816cc4",
+      "bytes": 1546,
+      "dimensions": [
+        256,
+        256
+      ],
+      "tintable": true,
+      "transformation": "SVG rasterized at 400px; monochrome symbols white for existing runtime accent tint; alpha-zero margin trimmed; aspect fit 224px centered on transparent 256px canvas; exact lossless WebP."
+    }
+  ]
+}

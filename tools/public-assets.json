@@ -1,0 +1,211 @@
+{
+  "format": "detox.public.assets",
+  "version": 1,
+  "assets": [
+    {
+      "path": "fonts/Nunito-OFL.txt",
+      "bytes": 4385,
+      "sha256": "580df76c95a1ec5ab878ceb25bb3d85c6a076804e9c970c8c6972aea775fdf65"
+    },
+    {
+      "path": "fonts/Nunito.ttf",
+      "bytes": 276932,
+      "sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207"
+    },
+    {
+      "path": "fonts/Orbitron-OFL.txt",
+      "bytes": 4426,
+      "sha256": "ab609b0e110d622435ff337cdf233288556e011bbf9bd0550be98846c0630819"
+    },
+    {
+      "path": "fonts/Orbitron.ttf",
+      "bytes": 38576,
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd"
+    },
+    {
+      "path": "fonts/Pacifico-OFL.txt",
+      "bytes": 4389,
+      "sha256": "a47e5daeda73568969395c656823102678f2eefb0d7d7ecb47aac4cc17e42204"
+    },
+    {
+      "path": "fonts/Pacifico-Regular.ttf",
+      "bytes": 329380,
+      "sha256": "5b6c0d5334a7bf77dea52b975c5a0c408878c0f7115ed5b6fb151f634b7bf701"
+    },
+    {
+      "path": "fonts/PlayfairDisplay-OFL.txt",
+      "bytes": 4449,
+      "sha256": "566be814f8e96e93dfa16101331557eb6b5467e9e03f627c0910fe93ca12300e"
+    },
+    {
+      "path": "fonts/PlayfairDisplay.ttf",
+      "bytes": 300724,
+      "sha256": "c40f2293766a503bc70cce9e512ef844a4ccb7cbcde792fe2ea31d191917d8d6"
+    },
+    {
+      "path": "fonts/Poppins-OFL.txt",
+      "bytes": 4385,
+      "sha256": "6be04893d770899a015649c7aa3b582f871b272f8747a92b78b17c3e5c8b2573"
+    },
+    {
+      "path": "fonts/Poppins-Regular.ttf",
+      "bytes": 160316,
+      "sha256": "7e65201e9b79159e2300267cc885e16c8dcef2424cdfa09a29bfb0980a94a7ba"
+    },
+    {
+      "path": "licenses/3dicons/CC0-1.0.txt",
+      "bytes": 6671,
+      "sha256": "4d2eef679d5faf924534bcc132646322e9a852ce50ae5616694e0b95f7b8275d"
+    },
+    {
+      "path": "licenses/3dicons/NOTICE.md",
+      "bytes": 477,
+      "sha256": "d9897ffe5a20f98e85e95c89130374ee8f93b8b7316963b0007ebd1a0723c903"
+    },
+    {
+      "path": "licenses/3dicons/PROVENANCE.json",
+      "bytes": 5999,
+      "sha256": "7f2f6aecfedf2ff2b919573bb95755139b71401d19c40241c63a284334e2e260"
+    },
+    {
+      "path": "licenses/fluent-system-icons/MIT.txt",
+      "bytes": 1099,
+      "sha256": "9be360c19bf5502c7927a6ca365a7504b620b408cdf6e3e2413fa63a325bd381"
+    },
+    {
+      "path": "licenses/fluent-system-icons/NOTICE.md",
+      "bytes": 319,
+      "sha256": "1538ce51aebcc4cb479a48532f1d27fb0c66a4e1f66d941ade96da724bd4b79f"
+    },
+    {
+      "path": "licenses/fluent-system-icons/PROVENANCE.json",
+      "bytes": 5407,
+      "sha256": "f937abb9507ed89ec9c2c823caaa1c363e0ed3508ce3fcc1844ffca9f5e10692"
+    },
+    {
+      "path": "licenses/simple-icons/CC0-1.0.md",
+      "bytes": 6599,
+      "sha256": "d2ff98b803f0c12f09825d4489cb8a4b14fd912ebbf6a3e8b23a77043a7dc043"
+    },
+    {
+      "path": "licenses/simple-icons/NOTICE.md",
+      "bytes": 317,
+      "sha256": "c69f03c6eb4e4dda295d895c25c2a26b26bc142a185e26a538565a38df5071d0"
+    },
+    {
+      "path": "licenses/simple-icons/PROVENANCE.json",
+      "bytes": 1045,
+      "sha256": "65c689c9e237092866ee20daa361590c4c161a53586e34bbc32e8047b256becc"
+    },
+    {
+      "path": "phone_companion.html",
+      "bytes": 23512,
+      "sha256": "dab9b8ae80bca7e76ea4235bb959d01a3e467344c116be782e8afae1395537a6"
+    },
+    {
+      "path": "public/LICENSE.txt",
+      "bytes": 1085,
+      "sha256": "50fe607cf32a66c951f54761409f95d59be415cd054ad7ab5b38f01b55be0176"
+    },
+    {
+      "path": "public/NOTICE.md",
+      "bytes": 404,
+      "sha256": "1d8efea61c2d638fe158fa1166833ab32baebc723e0bb1b8b7ad3f426b1b4302"
+    },
+    {
+      "path": "public/PROVENANCE.json",
+      "bytes": 1527,
+      "sha256": "42f0a0c4480c8461a58127243af5d9a42249252c6c47f189276ea84c3ac8fcd1"
+    },
+    {
+      "path": "public/videos/aurora-drift.mp4",
+      "bytes": 149250,
+      "sha256": "28c4f41eb34a1da004afb47c3f2b453192efca63748e85acf8b5fbcb43543fe6"
+    },
+    {
+      "path": "public/videos/ember-drift.mp4",
+      "bytes": 199678,
+      "sha256": "045ab3a8403dde76230dd36f65650cf713b00e1d8e1b1a797cd70a52848db2c4"
+    },
+    {
+      "path": "public/wallpapers/aurora-veil.jpg",
+      "bytes": 48856,
+      "sha256": "1e192fac2dd3fdaed31f755fce20aa50bc6acceebac857bcc3856826409f54c9"
+    },
+    {
+      "path": "public/wallpapers/ember-horizon.jpg",
+      "bytes": 61183,
+      "sha256": "fa19e9ec68dd7e8d5b82b33edaad6f97c894519b44c7a7c3fb106d0a74e3dc02"
+    },
+    {
+      "path": "public/wallpapers/twilight-peaks.jpg",
+      "bytes": 61108,
+      "sha256": "3742333d14f87b60ac7f36d11f212fd7475bbcc82207af34272dc09a4bba2ab6"
+    },
+    {
+      "path": "ui/3dicons/color-palette-dynamic-color.webp",
+      "bytes": 31018,
+      "sha256": "f87d02e1bea10700b12145dd7a211effc3c2872612ecac2c8f7f54a9abfcd8fb"
+    },
+    {
+      "path": "ui/3dicons/headphone-dynamic-color.webp",
+      "bytes": 29558,
+      "sha256": "e7a6bdde573edd7e79a2cc3ebb05ebfd252d2ed263100baf54108e0eb0606b22"
+    },
+    {
+      "path": "ui/3dicons/picture-dynamic-color.webp",
+      "bytes": 34246,
+      "sha256": "484fa4bc802a5cb085c178ad9c57128737460c85834539476754cfdf17ac4d86"
+    },
+    {
+      "path": "ui/3dicons/plus-dynamic-color.webp",
+      "bytes": 20028,
+      "sha256": "7a86180adb6f62abfba33037cdbcef4d49369667cc9d33144634a51f9639e270"
+    },
+    {
+      "path": "ui/3dicons/setting-dynamic-color.webp",
+      "bytes": 30742,
+      "sha256": "1e99e53c6b58670e8cf11b7cf1035e293e2c470f93b975052a924f8e6344764b"
+    },
+    {
+      "path": "ui/3dicons/tool-dynamic-color.webp",
+      "bytes": 27872,
+      "sha256": "d62afab255b97344c492631f986b49b776a8fa2bb333bdf4c126c5bc58216534"
+    },
+    {
+      "path": "ui/utility-fluent/apps.webp",
+      "bytes": 13686,
+      "sha256": "d4969146b0479b15982ac552b6ca8b7db611dd971b5938d08f2a167812e7e8df"
+    },
+    {
+      "path": "ui/utility-fluent/bluetooth.webp",
+      "bytes": 2454,
+      "sha256": "1a628cef28ba5afd4ecb8b6c0c55915e3a792cfe00e938c77f5e621b0cffc296"
+    },
+    {
+      "path": "ui/utility-fluent/home.webp",
+      "bytes": 11778,
+      "sha256": "ce0392e086977422fca1babca006415c94c1c9ef017e2a42507f25f5fb78d645"
+    },
+    {
+      "path": "ui/utility-fluent/more.webp",
+      "bytes": 1546,
+      "sha256": "13b258c5358954dd10f3abab8b0ffa79d3c9b6150216ada6cb5fdf42e5816cc4"
+    },
+    {
+      "path": "ui/utility-fluent/power.webp",
+      "bytes": 4594,
+      "sha256": "d46dd9b03f783abf6344296fc5ecc413c0c6a46311b0afc322e1df1a69aef8b3"
+    },
+    {
+      "path": "ui/utility-fluent/restart.webp",
+      "bytes": 4530,
+      "sha256": "04193ea4299769d401a8cec284bdef728a3bb1cfb6d8cf11a8076b4ea903edb6"
+    },
+    {
+      "path": "ui/utility-simpleicons/google-play.webp",
+      "bytes": 3818,
+      "sha256": "605d9150f89e3d272c77925054f7de211a0e7627719cd0a10555df7f3f854363"
+    }
+  ]
+}
